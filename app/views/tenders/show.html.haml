@@ -1,0 +1,16 @@
+.page-header
+  = link_to tenders_path, :class => 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to edit_tender_path(tender), :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  %h1 Show tender
+
+%dl.dl-horizontal
+  %dt Title:
+  %dd= tender.title
+  %dt Description:
+  %dd= tender.description
+  %dt User:
+  %dd= tender.user_id
