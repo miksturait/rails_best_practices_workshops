@@ -19,6 +19,7 @@ gem 'draper'
 gem 'kaminari'
 gem 'devise'
 gem 'decent_exposure'
+gem 'decent_decoration'
 
 group :development do
   gem 'guard-rails', '~> 0.5.0'

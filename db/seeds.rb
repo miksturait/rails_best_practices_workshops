@@ -9,8 +9,8 @@
 
 user = User.create(name: 'Tony',
                    email: 'tiny@bravo.dev',
-                   password: 'secret123',
-                   password_confirmation: 'secret123')
+                   password: 'Secret123',
+                   password_confirmation: 'Secret123')
 
 
 25.times { |i| Tender.create(title: "Request #{i}",

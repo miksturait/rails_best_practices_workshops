@@ -3,8 +3,12 @@ class TendersController < ApplicationController
   expose(:tender, attributes: :tender_params)
   expose(:tenders, ancestor: :current_user)
   expose(:all_tenders) { Tender.order(:id).page(params[:page]) }
-  expose(:offers, ancestor: :tender)
+  expose_decorated(:offers, ancestor: :tender)
 
+
+  def show
+    self.tender = all_tenders.find(params[:id])
+  end
   # POST /tenders
   def create
     if tender.save

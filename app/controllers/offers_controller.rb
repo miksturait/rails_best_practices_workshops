@@ -10,7 +10,7 @@ class OffersController < ApplicationController
     if offer.save
       redirect_to tender, notice: 'Offer was successfully created.'
     else
-      render :new
+      redirect_to tender, notice: 'Nope...'
     end
   end
 
@@ -23,6 +23,6 @@ class OffersController < ApplicationController
   private
   # Only allow a trusted parameter "white list" through.
   def offer_params
-    params.require(:offer).permit(:message)
+    params.require(:offer).permit(:message).merge(user_id: current_user.id)
   end
 end

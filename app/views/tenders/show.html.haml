@@ -17,9 +17,10 @@
 
 %h2 Offers
 
-= simple_form_for [tender, Offer.new] do |f|
-  = f.input :message
-  = f.button :submit
+- unless tender.user == current_user
+  = simple_form_for [tender, Offer.new] do |f|
+    = f.input :message
+    = f.button :submit
 
 - if offers.present?
   %ul.list-grou

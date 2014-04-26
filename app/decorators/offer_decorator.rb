@@ -1,0 +1,2 @@
+class OfferDecorator < ApplicationDecorator
+end
