@@ -4,6 +4,8 @@
     New Tender
   %h1 Listing tenders
 
+= paginate all_tenders
+
 .table-responsive
   %table.table.table-striped.table-bordered.table-hover
     %thead
@@ -16,7 +18,7 @@
         %th
 
     %tbody
-      - tenders.each do |tender|
+      - all_tenders.each do |tender|
         %tr
           %td= tender.title
           %td= tender.description

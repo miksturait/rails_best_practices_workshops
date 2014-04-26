@@ -7,14 +7,13 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-unless User.exists?
-  user = User.create(name: 'Tony',
-                     email: 'tiny@bravo.dev',
-                     password: 'secret',
-                     password_confirmation: 'secret')
+user = User.create(name: 'Tony',
+                   email: 'tiny@bravo.dev',
+                   password: 'secret123',
+                   password_confirmation: 'secret123')
 
 
-  25.times { |i| Tender.create(title: "Request #{i}",
-                                description: "Description #{i}",
-                                user_id: user.id) }
-end
+25.times { |i| Tender.create(title: "Request #{i}",
+                              description: "Description #{i}",
+                              user_id: user.id) }
+

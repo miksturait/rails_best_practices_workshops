@@ -1,7 +1,8 @@
 class TendersController < ApplicationController
   before_action :authenticate_user!
   expose(:tender, attributes: :tender_params)
-  expose(:tenders)
+  expose(:tenders, ancestor: :current_user)
+  expose(:all_tenders) { Tender.order(:id).page(params[:page]) }
 
   # POST /tenders
   def create
