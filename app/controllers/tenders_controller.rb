@@ -1,4 +1,5 @@
 class TendersController < ApplicationController
+  before_action :authenticate_user!
   expose(:tender, attributes: :tender_params)
   expose(:tenders)
 
