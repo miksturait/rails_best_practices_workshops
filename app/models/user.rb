@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :tenders, inverse_of: :user
+  has_many :offers, inverse_of: :user
 end

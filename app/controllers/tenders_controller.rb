@@ -3,6 +3,7 @@ class TendersController < ApplicationController
   expose(:tender, attributes: :tender_params)
   expose(:tenders, ancestor: :current_user)
   expose(:all_tenders) { Tender.order(:id).page(params[:page]) }
+  expose(:offers, ancestor: :tender)
 
   # POST /tenders
   def create

@@ -14,3 +14,13 @@
   %dd= tender.description
   %dt User:
   %dd= tender.user_id
+
+%h2 Offers
+
+= simple_form_for [tender, Offer.new] do |f|
+  = f.input :message
+  = f.button :submit
+
+- if offers.present?
+  %ul.list-grou
+    = render offers
